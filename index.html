@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Basic HTML Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="global-container">
+        <div class="header-container">
+            <h1>Customer Details:</h1>
+        </div>
+        <hr />
+        <main>
+            <div class="section">
+                <div class="input-title"><h4>Full Name</h4></div>
+                <div class="input-area">
+                    <div class="input-group">
+                        <input type="text" id="first-name" name="first-name" class="styled-input"/>
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="last-name" name="last-name" class="styled-input"/>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-title"><h4>Address</h4></div>
+                <div class="input-group">
+                    <input type="text" id="street-address" name="street-address" class="styled-input"/>
+                    <label for="street-address">Street Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="street-address-2" name="street-address-2" class="styled-input"/>
+                    <label for="street-address-2">Street Address Line 2</label>
+                </div>
+                <div class="input-area">
+                    <div class="input-group">
+                        <input type="text" id="city" name="city" class="styled-input"/>
+                        <label for="city">City</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="state" name="state" class="styled-input"/>
+                        <label for="state">State / Province</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="postal" name="postal" class="styled-input"/>
+                    <label for="postal">Postal / Zip Code</label>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-title"><h4>Phone Number</h4></div>
+                <div class="input-group short-input">
+                    <input type="text" id="number" name="number" class="styled-input" placeholder="(000) 000-0000"/>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-title"><h4>E-mail</h4></div>
+                <div class="input-group short-input">
+                    <input type="text" id="email" name="email" class="styled-input" placeholder="ex: email@yahoo.com"/>
+                    <label for="email">example@example.com</label>
+                </div>
+            </div>
+            <div class="section"><hr /></div>
+            <div class="section">
+                <div class="input-title"><h4>How did you hear about us?</h4></div>
+                <div class="input-group short-input">
+                    <select id="country" class="styled-select">
+                        <option value="">Please Select</option>
+                        <option value="newspaper">Newspaper</option>
+                        <option value="internet">Internet</option>
+                        <option value="magazine">Magazine</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-group">
+                    <div class="input-title"><h4>Feedback about us:</h4></div>
+                    <div class="textarea-container">
+                        <textarea id="message" class="styled-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-group">
+                    <div class="input-title"><h4>Suggestions if any for further improvement:</h4></div>
+                    <div class="textarea-container">
+                        <textarea id="message" class="styled-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-group">
+                    <div class="input-title"><h4>Will you be willing to recommend us?</h4></div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" class="styled-checkbox">
+                        <label for="newsletter">Yes</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" class="styled-checkbox">
+                        <label for="terms">Maybe</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" class="styled-checkbox">
+                        <label for="terms">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="input-title"><h4>Please give reference of any two people whom you feel:</h4></div>
+                <div class="table-wrapper">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th class="empty-th"></th>
+                                <th>Full Name</th>
+                                <th>Address</th>
+                                <th>Contact Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rowN">1</td>
+                                <td><input type="text" name="fullName"></td>
+                                <td><input type="text" name="Address"></td>
+                                <td><input type="text" name="number"></td>
+                            </tr>
+                            <tr>
+                                <td class="rowN">2</td>
+                                <td><input type="text" name="fullName"></td>
+                                <td><input type="text" name="Address"></td>
+                                <td><input type="text" name="number"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <hr />
+        <div class="section">
+            <div class="footer-container">
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
