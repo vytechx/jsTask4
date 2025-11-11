@@ -82,6 +82,7 @@ label {
     background: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .textarea-container {
@@ -176,4 +177,13 @@ label {
     display: flex;
     justify-content: start;
     padding: 20px 0;
+}
+
+.asterisk{
+    color: var(--dark-red);
+    padding-left: 7px;
+}
+
+.styled-input::placeholder{
+    color: var(--secondary-text);
 }
