@@ -10,146 +10,163 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div class="popup-container" id="popup">
+        <img src="4-form-success.png" alt="Success" />
+    </div>
     <div class="global-container">
         <div class="header-container">
             <h1>Customer Details:</h1>
         </div>
         <hr />
         <main>
-            <div class="section">
-                <div class="input-title"><h4>Full Name<span class="asterisk">*</span></h4></div>
-                <div class="input-area">
-                    <div class="input-group">
-                        <input type="text" id="first-name" name="first-name" class="styled-input"/>
-                        <label for="first-name">First Name</label>
+            <form id="myForm">
+                <div class="section" id="name-section">
+                    <div class="input-title"><h4>Full Name<span class="asterisk">*</span></h4></div>
+                    <div class="input-area">
+                        <div class="input-group">
+                            <input type="text" id="first-name" name="first-name" class="styled-input"/>
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="last-name" name="last-name" class="styled-input"/>
+                            <label for="last-name">Last Name</label>
+                        </div>
                     </div>
+                    <div class="required-error" id="required-error"></div>
+                </div>
+                <div class="section" id="address-section">
+                    <div class="input-title"><h4>Address<span class="asterisk">*</span></h4></div>
                     <div class="input-group">
-                        <input type="text" id="last-name" name="last-name" class="styled-input"/>
-                        <label for="last-name">Last Name</label>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="input-title"><h4>Address<span class="asterisk">*</span></h4></div>
-                <div class="input-group">
-                    <input type="text" id="street-address" name="street-address" class="styled-input"/>
-                    <label for="street-address">Street Address</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" id="street-address-2" name="street-address-2" class="styled-input"/>
-                    <label for="street-address-2">Street Address Line 2</label>
-                </div>
-                <div class="input-area">
-                    <div class="input-group">
-                        <input type="text" id="city" name="city" class="styled-input"/>
-                        <label for="city">City</label>
+                        <input type="text" id="street-address" name="street-address" class="styled-input" />
+                        <label for="street-address">Street Address</label>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="state" name="state" class="styled-input"/>
-                        <label for="state">State / Province</label>
+                        <input type="text" id="street-address-2" name="street-address-2" class="styled-input" />
+                        <label for="street-address-2">Street Address Line 2</label>
+                    </div>
+                    <div class="input-area">
+                        <div class="input-group">
+                            <input type="text" id="city" name="city" class="styled-input" />
+                            <label for="city">City</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="state" name="state" class="styled-input" />
+                            <label for="state">State / Province</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="postal" name="postal" class="styled-input" />
+                        <label for="postal">Postal / Zip Code</label>
+                    </div>
+                    <div class="required-error" id="required-error"></div>
+                </div>
+                <div class="section" id="number-section">
+                    <div class="input-title"><h4>Phone Number<span class="asterisk">*</span></h4></div>
+                    <div class="input-group short-input">
+                        <input type="text" id="number" name="number" class="styled-input" placeholder="(000) 000-0000" />
+                    </div>
+                    <div class="required-error" id="required-error"></div>
+                    <div class="invalid-error" id="invalid-error"></div>
+                </div>
+                <div class="section" id="email-section">
+                    <div class="input-title"><h4>E-mail</h4></div>
+                    <div class="input-group short-input">
+                        <input type="text" id="email" name="email" class="styled-input" placeholder="ex: email@yahoo.com"/>
+                        <label for="email">example@example.com</label>
+                    </div>
+                    <div class="required-error" id="required-error"></div>
+                    <div class="email-error" id="email-error"></div>
+                </div>
+                <div class="section"><hr /></div>
+                <div class="section" id="hear-section">
+                    <div class="input-title"><h4>How did you hear about us?<span class="asterisk">*</span></h4></div>
+                    <div class="input-group short-input">
+                        <select id="hear-select" class="styled-select" >
+                            <option value="">Please Select</option>
+                            <option value="newspaper">Newspaper</option>
+                            <option value="internet">Internet</option>
+                            <option value="magazine">Magazine</option>
+                            <option value="other">Other (Please specify...)</option>
+                        </select>
+                        <div class="other-input" id="other">
+                            <!-- <label for="other-input-text">Other</label> -->
+                            <div class="input-title"><h4>Other<span class="asterisk">*</span></h4></div>
+                            <input type="text" id="other-input-text" class="styled-input" />
+                        </div>
+                    </div>
+                    <div class="required-error" id="required-error"></div>
+                </div>
+                <div class="section">
+                    <div class="input-group">
+                        <div class="input-title"><h4>Feedback about us:</h4></div>
+                        <div class="textarea-container">
+                            <textarea id="feedback" class="styled-textarea"></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="postal" name="postal" class="styled-input"/>
-                    <label for="postal">Postal / Zip Code</label>
-                </div>
-            </div>
-            <div class="section">
-                <div class="input-title"><h4>Phone Number<span class="asterisk">*</span></h4></div>
-                <div class="input-group short-input">
-                    <input type="text" id="number" name="number" class="styled-input" placeholder="(000) 000-0000"/>
-                </div>
-            </div>
-            <div class="section">
-                <div class="input-title"><h4>E-mail</h4></div>
-                <div class="input-group short-input">
-                    <input type="text" id="email" name="email" class="styled-input" placeholder="ex: email@yahoo.com"/>
-                    <label for="email">example@example.com</label>
-                </div>
-            </div>
-            <div class="section"><hr /></div>
-            <div class="section">
-                <div class="input-title"><h4>How did you hear about us?<span class="asterisk">*</span></h4></div>
-                <div class="input-group short-input">
-                    <select id="country" class="styled-select">
-                        <option value="">Please Select</option>
-                        <option value="newspaper">Newspaper</option>
-                        <option value="internet">Internet</option>
-                        <option value="magazine">Magazine</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-            </div>
-            <div class="section">
-                <div class="input-group">
-                    <div class="input-title"><h4>Feedback about us:</h4></div>
-                    <div class="textarea-container">
-                        <textarea id="message" class="styled-textarea"></textarea>
+                <div class="section">
+                    <div class="input-group">
+                        <div class="input-title"><h4>Suggestions if any for further improvement:</h4></div>
+                        <div class="textarea-container">
+                            <textarea id="suggestions" class="styled-textarea"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="section">
-                <div class="input-group">
-                    <div class="input-title"><h4>Suggestions if any for further improvement:</h4></div>
-                    <div class="textarea-container">
-                        <textarea id="message" class="styled-textarea"></textarea>
+                <div class="section">
+                    <div class="input-group">
+                        <div class="input-title"><h4>Will you be willing to recommend us?</h4></div>
+                        <div class="checkbox-group" >
+                            <input type="checkbox" id="yes" class="styled-checkbox" value="yes">
+                            <label for="newsletter">Yes</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="maybe" class="styled-checkbox" value="maybe">
+                            <label for="terms">Maybe</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="no" class="styled-checkbox" value="no">
+                            <label for="terms">No</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="section">
-                <div class="input-group">
-                    <div class="input-title"><h4>Will you be willing to recommend us?</h4></div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="newsletter" class="styled-checkbox">
-                        <label for="newsletter">Yes</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" class="styled-checkbox">
-                        <label for="terms">Maybe</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" class="styled-checkbox">
-                        <label for="terms">No</label>
+                <div class="section">
+                    <div class="input-title"><h4>Please give reference of any two people whom you feel:</h4></div>
+                    <div class="table-wrapper">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th class="empty-th"></th>
+                                    <th>Full Name</th>
+                                    <th>Address</th>
+                                    <th>Contact Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="rowN">1</td>
+                                    <td><input type="text" name="fullName"></td>
+                                    <td><input type="text" name="Address"></td>
+                                    <td><input type="text" name="number"></td>
+                                </tr>
+                                <tr>
+                                    <td class="rowN">2</td>
+                                    <td><input type="text" name="fullName"></td>
+                                    <td><input type="text" name="Address"></td>
+                                    <td><input type="text" name="number"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-            <div class="section">
-                <div class="input-title"><h4>Please give reference of any two people whom you feel:</h4></div>
-                <div class="table-wrapper">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th class="empty-th"></th>
-                                <th>Full Name</th>
-                                <th>Address</th>
-                                <th>Contact Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="rowN">1</td>
-                                <td><input type="text" name="fullName"></td>
-                                <td><input type="text" name="Address"></td>
-                                <td><input type="text" name="number"></td>
-                            </tr>
-                            <tr>
-                                <td class="rowN">2</td>
-                                <td><input type="text" name="fullName"></td>
-                                <td><input type="text" name="Address"></td>
-                                <td><input type="text" name="number"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            </form>
         </main>
         <hr />
         <div class="section">
             <div class="footer-container">
-                <button class="submit">Submit</button>
+                <button class="submit" type="submit" form="myForm">Submit</button>
             </div>
         </div>
     </div>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

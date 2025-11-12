@@ -67,11 +67,12 @@ label {
 }
 
 .section{
-    padding: 0 20px;
+    padding: 5px 20px;
 }
 
 .short-input{
     max-width: 300px;
+    padding-bottom: 25px;
 }
 
 .styled-select {
@@ -186,4 +187,33 @@ label {
 
 .styled-input::placeholder{
     color: var(--secondary-text);
+}
+
+.email-error, .required-error, .invalid-error {
+    color: #fff;
+    font-size: 12px;
+    margin-top: -15px;
+    background-color: var(--dark-red);
+    border: none;
+    border-radius: 3px;
+    width: fit-content;
+    padding: 2px 4px;
+    display: none;
+}
+
+.popup-container{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.other-input{
+    display: none;
+    margin-top: 10px;
 }
