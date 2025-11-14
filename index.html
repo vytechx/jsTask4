@@ -32,7 +32,7 @@
                             <label for="last-name">Last Name</label>
                         </div>
                     </div>
-                    <div class="required-error" id="required-error"></div>
+                    <div class="required-error"></div>
                 </div>
                 <div class="section" id="address-section">
                     <div class="input-title"><h4>Address<span class="asterisk">*</span></h4></div>
@@ -58,14 +58,14 @@
                         <input type="text" id="postal" name="postal" class="styled-input" />
                         <label for="postal">Postal / Zip Code</label>
                     </div>
-                    <div class="required-error" id="required-error"></div>
+                    <div class="required-error"></div>
                 </div>
                 <div class="section" id="number-section">
                     <div class="input-title"><h4>Phone Number<span class="asterisk">*</span></h4></div>
                     <div class="input-group short-input">
                         <input type="text" id="number" name="number" class="styled-input" placeholder="(000) 000-0000" />
                     </div>
-                    <div class="required-error" id="required-error"></div>
+                    <div class="required-error"></div>
                     <div class="invalid-error" id="invalid-error"></div>
                 </div>
                 <div class="section" id="email-section">
@@ -74,7 +74,6 @@
                         <input type="text" id="email" name="email" class="styled-input" placeholder="ex: email@yahoo.com"/>
                         <label for="email">example@example.com</label>
                     </div>
-                    <div class="required-error" id="required-error"></div>
                     <div class="email-error" id="email-error"></div>
                 </div>
                 <div class="section"><hr /></div>
@@ -89,12 +88,11 @@
                             <option value="other">Other (Please specify...)</option>
                         </select>
                         <div class="other-input" id="other">
-                            <!-- <label for="other-input-text">Other</label> -->
                             <div class="input-title"><h4>Other<span class="asterisk">*</span></h4></div>
                             <input type="text" id="other-input-text" class="styled-input" />
                         </div>
                     </div>
-                    <div class="required-error" id="required-error"></div>
+                    <div class="required-error"></div>
                 </div>
                 <div class="section">
                     <div class="input-group">
@@ -116,16 +114,16 @@
                     <div class="input-group">
                         <div class="input-title"><h4>Will you be willing to recommend us?</h4></div>
                         <div class="checkbox-group" >
-                            <input type="checkbox" id="yes" class="styled-checkbox" value="yes">
-                            <label for="newsletter">Yes</label>
+                            <input type="checkbox" id="yes" class="styled-checkbox" value="yes" name="yes">
+                            <label for="yes">Yes</label>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="maybe" class="styled-checkbox" value="maybe">
-                            <label for="terms">Maybe</label>
+                            <input type="checkbox" id="maybe" class="styled-checkbox" value="maybe" name="maybe">
+                            <label for="maybe">Maybe</label>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="no" class="styled-checkbox" value="no">
-                            <label for="terms">No</label>
+                            <input type="checkbox" id="no" class="styled-checkbox" value="no" name="no">
+                            <label for="no">No</label>
                         </div>
                     </div>
                 </div>

@@ -27,67 +27,72 @@ form.addEventListener("submit", (e) => {
 
     if ((firstName.value.trim() === "" || firstName.value == null) || (lastName.value.trim() === "" || lastName.value == null)) {
         document.getElementById("name-section").style.backgroundColor = "var(--light-red)";
-        document.querySelector("#name-section #required-error").innerText = "This field is required.";
-        document.querySelector("#name-section #required-error").style.display = "block";
+        document.querySelector("#name-section .required-error").innerText = "This field is required.";
+        document.querySelector("#name-section .required-error").style.display = "block";
         errors.push(firstName);
+    }
+    else {
+        document.getElementById("name-section").style.backgroundColor = "";
+        document.querySelector("#name-section .required-error").style.display = "none";
     }
     if ((streetAddress.value.trim() === "" || streetAddress.value == null) || (address2.value.trim() === "" || address2.value == null) || (city.value.trim() === "" || city.value == null) || (state.value.trim() === "" || state.value == null) || (postal.value.trim() === "" || postal.value == null)) {
         document.getElementById("address-section").style.backgroundColor = "var(--light-red)";
-        document.querySelector("#address-section #required-error").innerText = "This field is required.";
-        document.querySelector("#address-section #required-error").style.display = "block";
+        document.querySelector("#address-section .required-error").innerText = "This field is required.";
+        document.querySelector("#address-section .required-error").style.display = "block";
         errors.push(streetAddress);
+    }
+    else {
+        document.getElementById("address-section").style.backgroundColor = "";
+        document.querySelector("#address-section .required-error").style.display = "none";
     }
 
     const phoneValue = phone.value.trim();
-    const numberErrorEl = document.querySelector("#number-section #required-error");
-    document.getElementById("number-section").style.backgroundColor = "";
-    numberErrorEl.style.display = "none";
+    const numberErrorEl = document.querySelector("#number-section #invalid-error");
+    const numberReqEl = document.querySelector("#number-section .required-error");
     if (phoneValue === "" || phoneValue == null) {
         document.getElementById("number-section").style.backgroundColor = "var(--light-red)";
-        document.querySelector("#number-section #required-error").innerText = "This field is required.";
-        document.querySelector("#number-section #required-error").style.display = "block";
+        numberReqEl.innerText = "This field is required.";
+        numberReqEl.style.display = "block";
         errors.push(phone);
     }
-
-    if (phoneValue && /\D/.test(phoneValue)) {
+    else if (phoneValue && /\D/.test(phoneValue)) {
+        numberReqEl.style.display = "none";
         document.getElementById("number-section").style.backgroundColor = "var(--light-red)";
         numberErrorEl.innerText = "Only numbers are allowed.";
         numberErrorEl.style.display = "block";
         errors.push(phone);
     }
+    else {
+        document.getElementById("number-section").style.backgroundColor = "";
+        numberErrorEl.style.display = "none";
+    }
 
     const emailValue = email.value.trim();
-    const emailErrorEl = document.querySelector("#email-section #required-error");
-    const emailReqEl = document.querySelector("#email-section #email-error");
+    const emailErrorEl = document.getElementById("email-error");
 
     emailErrorEl.style.display = "none";
-    emailReqEl.style.display = "none"
     document.getElementById("email-section").style.backgroundColor = "";
 
-    if (emailValue === "" || emailValue == null) {
+    if (emailValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
         document.getElementById("email-section").style.backgroundColor = "var(--light-red)";
-        emailErrorEl.innerText = "This field is required.";
+        emailErrorEl.innerText = "Please enter a valid email address.";
         emailErrorEl.style.display = "block";
-        errors.push(email);
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-        document.getElementById("email-section").style.backgroundColor = "var(--light-red)";
-        emailReqEl.innerText = "Enter a valid e-mail address";
-        emailReqEl.style.display = "block";
         errors.push(email);
     } else {
         document.getElementById("email-section").style.backgroundColor = "";
         emailErrorEl.style.display = "none";
-        emailReqEl.style.display = "none"
     }
 
-    const hearErrorEl = document.querySelector("#hear-section #required-error");
-    hearErrorEl.style.display = "none";
-    document.getElementById("hear-section").style.backgroundColor = "";
+    const hearErrorEl = document.querySelector("#hear-section .required-error");
     if (hearHow.value == ""){
         document.getElementById("hear-section").style.backgroundColor = "var(--light-red)";
         hearErrorEl.innerText = "This field is required.";
         hearErrorEl.style.display = "block";
         errors.push(hearHow);
+    }
+    else {
+        document.getElementById("hear-section").style.backgroundColor = "";
+        hearErrorEl.style.display = "none";
     }
     if (hearHow.value === "other") {
         const otherInputText = document.getElementById("other-input-text");
@@ -99,6 +104,7 @@ form.addEventListener("submit", (e) => {
         }
         else {
             otherInputText.style.display = "none";
+            hearErrorEl.style.display = "none";
             hearHow.value = otherInputText.value;
         }
     }
@@ -121,11 +127,16 @@ form.addEventListener("submit", (e) => {
     const tableInputs = [];
     const tableRows = document.querySelectorAll("table tbody tr");
     tableRows.forEach(row => {
-        let cells = row.querySelectorAll("input");
-        cells.forEach(cell => {
-            tableInputs.push(cell.value);
-        });
+        const inputs = Array.from(row.querySelectorAll("input"));
+        const obj = {};
+        for (let i = 0; i < 3; i++) {
+            const input = inputs[i];
+            const key = input.name;
+            obj[key] = input ? input.value : "";
+        }
+        tableInputs.push(obj);
     });
+
 
     const data = {
         firstName: firstName.value,
