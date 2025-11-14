@@ -103,7 +103,6 @@ form.addEventListener("submit", (e) => {
             errors.push(otherInputText);
         }
         else {
-            otherInputText.style.display = "none";
             hearErrorEl.style.display = "none";
             hearHow.value = otherInputText.value;
         }
