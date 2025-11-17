@@ -65,6 +65,7 @@ form.addEventListener("submit", (e) => {
     else {
         document.getElementById("number-section").style.backgroundColor = "";
         numberErrorEl.style.display = "none";
+        numberReqEl.style.display = "none";
     }
 
     const emailValue = email.value.trim();
