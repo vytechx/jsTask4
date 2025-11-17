@@ -1,0 +1,219 @@
+:root{
+    --main-text: rgb(44, 51, 69);
+    --secondary-text: rgb(87, 100, 126);
+    --dark-red: rgb(242, 58, 60);
+    --light-red: rgb(255, 237, 237);
+    --dark-blue: rgb(46, 105, 255);
+    --light-blue: rgb(241, 245, 255);
+    --table-color: rgb(195, 202, 216);
+    --green-color: rgb(24, 189, 91);
+}
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+body hr{
+    border: 1px solid #797979;
+    max-width: 1024px;
+}
+
+.global-container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 30px;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--secondary-text);
+    padding: 10px 10px 10px 0;
+}
+
+.input-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.input-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-text);
+}
+
+.input-group{
+    width: 100%;
+    min-width: 200px;
+    padding-right: 20px;
+}
+
+.section{
+    padding: 5px 20px;
+}
+
+.short-input{
+    max-width: 300px;
+    padding-bottom: 25px;
+}
+
+.styled-select {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.textarea-container {
+    position: relative;
+}
+
+.styled-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 150px;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.styled-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 5px 5px 0;
+}
+
+.styled-table td input{
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.styled-table th{
+    text-align: center;
+    padding: 12px 16px;
+    background-color: var(--light-blue);
+    border-radius: 3px;
+}
+
+.styled-table .empty-th{
+    background-color: transparent; 
+    border: none;
+}
+
+.styled-table .rowN{
+    text-align: center;
+    background-color: var(--light-blue);
+    border-radius: 3px;
+    width: 20px;
+    min-width: 20px;
+    padding: 8px 4px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    min-width: 600px;
+}
+
+.submit{
+    width: 200px;
+    padding: 12px 16px;
+    background-color:var(--green-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: start;
+    padding: 20px 0;
+}
+
+.asterisk{
+    color: var(--dark-red);
+    padding-left: 7px;
+}
+
+.styled-input::placeholder{
+    color: var(--secondary-text);
+}
+
+.email-error, .required-error, .invalid-error {
+    color: #fff;
+    font-size: 12px;
+    margin-top: -15px;
+    background-color: var(--dark-red);
+    border: none;
+    border-radius: 3px;
+    width: fit-content;
+    padding: 2px 4px;
+    display: none;
+}
+
+.popup-container{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.other-input{
+    display: none;
+    margin-top: 10px;
+}
